@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  --theme-bg-light: #bce6fb;
+  --theme-bg-mid: #63b8ee;
+  --theme-bg-dark: #2989d8;
+  --theme-bubble-shadow: rgba(0, 114, 255, 0.2);
+  --theme-glass-shadow: rgba(0, 114, 255, 0.2);
+}
+
+.theme-blue {
+  --theme-bg-light: #bce6fb;
+  --theme-bg-mid: #63b8ee;
+  --theme-bg-dark: #2989d8;
+  --theme-bubble-shadow: rgba(0, 114, 255, 0.2);
+  --theme-glass-shadow: rgba(0, 114, 255, 0.2);
+}
+
+.theme-emerald {
+  --theme-bg-light: #a7f3d0;
+  --theme-bg-mid: #34d399;
+  --theme-bg-dark: #059669;
+  --theme-bubble-shadow: rgba(5, 150, 105, 0.2);
+  --theme-glass-shadow: rgba(5, 150, 105, 0.2);
+}
+
+.theme-orange {
+  --theme-bg-light: #fed7aa;
+  --theme-bg-mid: #fb923c;
+  --theme-bg-dark: #ea580c;
+  --theme-bubble-shadow: rgba(234, 88, 12, 0.2);
+  --theme-glass-shadow: rgba(234, 88, 12, 0.2);
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.timer-font {
+  font-family: 'Outfit', sans-serif;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+}
+
+.frutiger-bg {
+  background: radial-gradient(circle at 50% 0%, var(--theme-bg-light) 0%, var(--theme-bg-mid) 50%, var(--theme-bg-dark) 100%);
+  transition: background 0.5s ease;
+}
+
+.aero-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.15) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+  border-right-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 8px 32px 0 var(--theme-glass-shadow),
+    inset 0 1px 1px rgba(255,255,255,1),
+    inset 0 -1px 2px rgba(255,255,255,0.2);
+}
+
+.aero-btn {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 48%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.4) 100%);
+  border: 1px solid rgba(160, 160, 160, 0.7);
+  border-top-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    inset 0 1px 1px rgba(255,255,255,1),
+    0 1px 2px rgba(0,0,0,0.08);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  transition: all 0.1s ease-out;
+  position: relative;
+  overflow: hidden;
+  color: #333;
+}
+.aero-btn:hover {
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 48%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.6) 100%);
+  border-color: rgba(120, 180, 220, 0.8);
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,1),
+    0 0 4px rgba(100, 150, 255, 0.4);
+}
+.aero-btn:active {
+  background: linear-gradient(to bottom, rgba(220,220,220,0.7) 0%, rgba(200,200,200,0.5) 48%, rgba(180,180,180,0.3) 50%, rgba(200,200,200,0.4) 100%);
+  border-color: rgba(140, 140, 140, 0.8);
+  box-shadow: 
+    inset 0 2px 4px rgba(0,0,0,0.15),
+    inset 0 0 2px rgba(0,0,0,0.1);
+  transform: translateY(1px);
+}
+
+.aero-btn-primary {
+  background: linear-gradient(to bottom, #7fcaf3 0%, #3e9ed9 48%, #166bad 50%, #2f8bd6 100%);
+  border: 1px solid #104875;
+  box-shadow: 
+    inset 0 1px 1px rgba(255,255,255,0.6),
+    inset 0 0 2px rgba(255,255,255,0.4),
+    0 1px 3px rgba(0,0,0,0.2);
+  color: white;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  transition: all 0.1s ease-out;
+}
+.aero-btn-primary:hover {
+  background: linear-gradient(to bottom, #98d8f8 0%, #56b2ea 48%, #1f7bbf 50%, #46a2e8 100%);
+  border-color: #0c3657;
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.8),
+    0 0 6px rgba(100, 180, 255, 0.6);
+}
+.aero-btn-primary:active {
+  background: linear-gradient(to bottom, #3b8cc7 0%, #1a68a5 48%, #104b7a 50%, #1b68a3 100%);
+  border-color: #08253b;
+  box-shadow: 
+    inset 0 2px 6px rgba(0,0,0,0.3),
+    inset 0 1px 2px rgba(0,0,0,0.2);
+  transform: translateY(1px);
+}
+
+/* Orange Theme Overrides for Primary Button */
+.theme-orange .aero-btn-primary {
+  background: linear-gradient(to bottom, #ffd28f 0%, #f77a23 48%, #d9510b 50%, #f48b3b 100%);
+  border: 1px solid #872e0d;
+}
+.theme-orange .aero-btn-primary:hover {
+  background: linear-gradient(to bottom, #ffe0ac 0%, #fc8e40 48%, #eb5b10 50%, #fa9e56 100%);
+  border-color: #632109;
+  box-shadow: 
+    inset 0 1px 2px rgba(255,255,255,0.8),
+    0 0 6px rgba(255, 160, 100, 0.6);
+}
+.theme-orange .aero-btn-primary:active {
+  background: linear-gradient(to bottom, #e37e29 0%, #c44d0c 48%, #913607 50%, #be4a0b 100%);
+  border-color: #4a1907;
+  box-shadow: 
+    inset 0 2px 6px rgba(0,0,0,0.3);
+}
+
+
+
+.aero-inset {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15), 0 1px 0 rgba(255,255,255,0.5);
+  border-radius: 8px;
+}
+
+.glossy-btn {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 48%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.4) 100%);
+  border: 1px solid rgba(160, 160, 160, 0.7);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,1), 0 1px 2px rgba(0,0,0,0.08);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.9);
+  transition: all 0.1s ease-out;
+  color: #333;
+}
+.glossy-btn:hover {
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 48%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.6) 100%);
+  border-color: rgba(120, 180, 220, 0.8);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,1), 0 0 4px rgba(100, 150, 255, 0.4);
+}
+.glossy-btn:active {
+  background: linear-gradient(to bottom, rgba(220,220,220,0.7) 0%, rgba(200,200,200,0.5) 48%, rgba(180,180,180,0.3) 50%, rgba(200,200,200,0.4) 100%);
+  border-color: rgba(140, 140, 140, 0.8);
+  transform: translateY(1px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), inset 0 0 2px rgba(0,0,0,0.1);
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1) 60%, rgba(255, 255, 255, 0.0) 100%);
+  box-shadow: inset -2px -2px 6px var(--theme-bubble-shadow), inset 2px 2px 6px rgba(255, 255, 255, 0.8), 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: float infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) scale(1); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1.05); opacity: 0.9; }
+  100% { transform: translateY(0px) scale(1); opacity: 0.6; }
+}
+
+/* YouTube Iframe container with gloss */
+.iframe-gloss {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+.iframe-gloss::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  pointer-events: none;
+}
